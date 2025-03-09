@@ -1,0 +1,73 @@
+load system io.
+load system math.
+
+-- circle structure
+structure Circle with
+    data center
+    data radius
+
+    function circumference with () do
+        return 2.0 * this @ radius * math @ pi.
+    end
+
+    function area with () do
+        return math @ pi * this @ radius * this @ radius.
+    end
+end
+
+-- first circle properties
+let center_coor = (1.5, 3.6).
+let radius = 3.3.
+let c = Circle(center_coor, radius).
+let circ = c @ circumference().
+
+-- print first circle properties
+io @ println("First Circle:").
+
+io @ println("Circle with center " + tostring(c @ center) + " and radius " + tostring(c @ radius) + " has circumference " + tostring(circ)).
+
+io @ println("Circle with center " + tostring(c @ center) + " and radius " + tostring(c @ radius) + " has area " + tostring(c @ area())).
+
+-- second circle properties
+let center_coor = (2.3, 7.2).
+let radius = 5.0.
+let c = Circle(center_coor, radius).
+let circ = c @ circumference().
+
+io @ println("").
+
+-- print second circle properties
+io @ println("Second Circle:").
+
+io @ println("Circle with center " + tostring(c @ center) + " and radius " + tostring(c @ radius) + " has circumference " + tostring(circ)).
+
+io @ println("Circle with center " + tostring(c @ center) + " and radius " + tostring(c @ radius) + " has area " + tostring(c @ area())).
+
+-- list of circles
+let circle_list = [Circle((1.0, 2.0), 3.0), Circle((3.0, 4.0), 5.0), Circle((5.0, 6.0), 7.0), Circle((2.0, 3.0), 4.0),  Circle((4.0, 5.0), 6.0)].
+
+io @ println("").
+
+-- print list of circles with their areas
+io @ println("List of Circles:").
+
+for circle in circle_list do
+    io @ println("Circle with center " + tostring(circle @ center) + " and radius " + tostring(circle @ radius) + " has area " + tostring(circle @ area())).
+end
+
+let highest_area_circle = circle_list @ 0.
+let highest_area = highest_area_circle @ area().
+
+-- find circle with highest area
+for circle in circle_list do
+    if circle @ area() > highest_area do
+        let highest_area_circle = circle.
+        let highest_area = circle @ area().
+    end
+end
+
+io @ println("").
+
+-- print circle with highest area
+io @ println("Circle with highest area:").
+io @ println("Circle with center " + tostring(highest_area_circle @ center) + " and radius " + tostring(highest_area_circle @ radius) + " has area " + tostring(highest_area)).

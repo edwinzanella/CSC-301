@@ -1,0 +1,16 @@
+--Extra Credit: Recursive Reverse List
+
+function reverse_list
+    with [] do
+        []
+    with [h|t] do
+        reverse_list(t) + [h]
+end
+
+let l = [1, 2, 3].
+assert(reverse_list(l) == [3, 2, 1]).
+
+load system io.
+
+io @println(reverse_list([])).
+io @println(reverse_list([1, 2, 3])).

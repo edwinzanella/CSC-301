@@ -1,0 +1,11 @@
+-- Question 2
+
+function f with (x, y, z) do
+    x + y + z
+end
+
+let concatonated = f("Hello ", "beautiful ", "world").
+
+load system io.
+
+io @println(concatonated).

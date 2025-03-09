@@ -1,0 +1,20 @@
+1. 
+
+Z {set of all integers}, {..., -2, -1, 0, 1, 2, ...}
+X {set of all integers / by 3}, {..., -6, -3, 0, 3, 6, ...}
+Y {set of all integers / by 12}, {..., -24, -12, 0, 12, 24, ...}
+
+1a. let x = y is Valid
+1b. let x = x is Valid
+1c. let y = y + 1 is Invalid
+1d. let z = x is Valid
+1e. let x = x + z is Invalid
+
+2.
+
+class Car
+class SportsCar inherits Car; class SUV inherits Car
+class FourByFourSUV inherits SUV
+
+2a. let Car c = new SUV(); is Valid because SUV inherits from Car.
+2b. let SportsCar s = new FourByFourSUV(); is Invalid because FourByFourSUV does not inherit from SportsCar. It inherits from SUV which inherits from Car.

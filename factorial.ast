@@ -1,0 +1,14 @@
+load system io.
+
+-- computes the factorial
+function fact with n do
+    let val = 1.
+    while n > 1 do
+        let val = val * n.
+        let n = n - 1.
+    end
+    return val.
+end
+
+let x = tointeger(io @input("Enter a positive integer: ")).
+io @println ("The factorial of " + tostring(x) + " is " + tostring(fact x)).

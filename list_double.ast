@@ -1,0 +1,8 @@
+function list_double with l do
+    [] if l == [] else [hd(l) * 2] + list_double(tl(l)).
+end
+
+load system io.
+
+io @println(list_double([])).
+io @println(list_double([1, 2, 3])).

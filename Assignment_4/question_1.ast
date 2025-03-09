@@ -1,0 +1,17 @@
+-- Question 1
+
+function f with x do
+    x * x
+end
+
+function q with (q, p) do
+    q(p)
+end
+
+load system io.
+
+let w = q(f, 3).
+
+io @println("The value of this program is: " + tostring(w)).
+
+-- Output: The value of this program is: 9

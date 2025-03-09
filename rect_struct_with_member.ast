@@ -1,0 +1,18 @@
+-- rectangle structure
+load system io.
+
+structure Rectangle with
+    data xdim.
+    data ydim.
+
+    -- member function
+    function area with () do
+        return this @ xdim * this @ ydim.
+    end
+end
+
+let r = Rectangle(4, 2).
+let x = tostring(r @ xdim).
+let y = tostring(r @ ydim).
+let area = tostring(r @ area()).
+io @println("The area of rectangle <" + x + "," + y + "> is " + area).

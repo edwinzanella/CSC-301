@@ -1,0 +1,10 @@
+-- rectangle structure
+load system io.
+
+structure Rectangle with
+    data xdim.
+    data ydim.
+end
+
+let r = Rectangle(4, 2).
+io @println("Rectangle with x = " + tostring(r @ xdim) + " and y = " + tostring(r @ ydim)).

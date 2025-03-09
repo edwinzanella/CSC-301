@@ -1,0 +1,17 @@
+-- Problem 2: Recursive function to find if an element is in a list
+
+function member
+    with ([], x) do
+        false
+    with ([h|t], x) do
+        x == h or member(t, x)
+end
+
+let l = [1, 2, 3].
+assert(member(l, 2) == true).
+assert(member(l, 5) == false).
+
+load system io.
+
+io @println(member([1, 2, 3], 2)).
+io @println(member([1, 2, 3], 5)).

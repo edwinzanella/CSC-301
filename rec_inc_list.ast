@@ -1,0 +1,8 @@
+function inc_list
+    with [] do
+        []
+    with [e|rest] do
+        [e + 1] + inc_list(rest)
+end
+
+assert(inc_list9[1, 2, 3] == [2, 3, 4]).

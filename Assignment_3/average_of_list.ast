@@ -1,0 +1,32 @@
+-- Problem 3: Recursive function to find the average of a list using function composition
+
+function sum_list
+    with ([], sum) do
+        sum
+    with ([h|t], sum) do
+        sum_list(t, sum + h)
+end
+
+function count_list
+    with ([], count) do
+        count
+    with ([h|t], count) do
+        count_list(t, count + 1)
+end
+
+function average
+    with ([]) do
+        0
+    with (l) do
+        let sum = sum_list(l, 0).
+        let count = count_list(l, 0).
+        sum / count
+end
+
+let l = [1, 2, 3].
+assert(average(l) == 2).
+
+load system io.
+
+io @println(average([1, 2, 3])).
+io @println(average([])).

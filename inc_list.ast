@@ -1,0 +1,10 @@
+function inc_list with input do
+    let aoutput = [].
+    for e in input do
+        output = @append(e+1).
+    end
+    return output.
+end
+
+assert(inc_list9[1, 2, 3] == [2, 3, 4]).
+

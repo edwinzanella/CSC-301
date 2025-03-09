@@ -1,0 +1,18 @@
+-- Problem 1: Recursive square function
+
+function square
+    with [] do
+        []
+    with [h|t] do
+        [h * h | square(t)]
+end
+
+let l = [1, 2, 3].
+let new_list = square(l).
+assert(new_list == [1, 4, 9]).
+
+load system io.
+
+io @println(square([])).
+io @println(square([1, 2, 3])).
+io @println(square([0, -1, -2])).

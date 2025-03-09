@@ -1,0 +1,8 @@
+function list_count with l do
+    0 if l == [] else 1 + list_count(tl(l)).
+end
+
+load system io.
+
+io @println(list_count([])).
+io @println(list_count([1, 2, 3])).

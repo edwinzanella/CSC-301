@@ -1,0 +1,10 @@
+function inc with val do
+    val + 1
+end
+
+-- lambda function
+function inc_list with input do
+    input @map (lambda with x do x + 1)
+end
+
+assert(inc_list[1, 2, 3] == [2, 3, 4]).
